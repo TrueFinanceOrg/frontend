@@ -1,18 +1,18 @@
-import { Navigate, createBrowserRouter } from "react-router-dom";
+import { Navigate, createBrowserRouter, redirect } from "react-router-dom";
 
-import { AccountBrokersPage } from "@/pages/account-brokers";
-import { AccountProfilePage } from "@/pages/account-profile";
-import { BondsPage } from "@/pages/bonds";
-import { CurrencyMetalsPage } from "@/pages/currency-metals";
-import { FundsPage } from "@/pages/funds";
-import { FuturesPage } from "@/pages/futures";
+import { AccountBrokersPage } from "@/pages/account/account-brokers";
+import { AccountProfilePage } from "@/pages/account/account-profile";
+import { BondsPage } from "@/pages/portfolio/bonds";
+import { CurrencyMetalsPage } from "@/pages/portfolio/currency-metals";
+import { FundsPage } from "@/pages/portfolio/funds";
+import { FuturesPage } from "@/pages/portfolio/futures";
 import { NotFoundPage } from "@/pages/not-found";
-import { OptionsPage } from "@/pages/options";
+import { OptionsPage } from "@/pages/portfolio/options";
 import { OverviewPage } from "@/pages/overview";
 import { PortfolioPage } from "@/pages/portfolio";
-import { StocksPage } from "@/pages/stocks";
-import { StrategyDetailsPage } from "@/pages/strategy-details";
-import { StrategiesOverviewPage } from "@/pages/strategies-overview";
+import { StocksPage } from "@/pages/portfolio/stocks";
+import { StrategyDetailsPage } from "@/pages/strategies/strategy-details";
+import { StrategiesOverviewPage } from "@/pages/strategies/strategies-overview";
 import { StrategiesPage } from "@/pages/strategies";
 import { AppLayout } from "@/widgets/app-layout";
 
@@ -34,6 +34,11 @@ export const router = createBrowserRouter([
       { path: "strategies/overview", element: <StrategiesOverviewPage /> },
       { path: "strategies", element: <StrategiesPage /> },
       { path: "strategies/:id", element: <StrategyDetailsPage /> },
+      {
+        path: "stratagies/:id",
+        loader: ({ params }) =>
+          redirect(`/strategies/${encodeURIComponent(params.id ?? "")}`),
+      },
       { path: "account", element: <Navigate to="/account/profile" replace /> },
       { path: "account/profile", element: <AccountProfilePage /> },
       { path: "account/brokers", element: <AccountBrokersPage /> },

@@ -28,7 +28,7 @@ export function SectionNav({ items }: SectionNavProps) {
         aria-label="Навигация раздела"
         className="mx-auto max-w-[1440px] overflow-x-auto px-4 [scrollbar-width:none] sm:px-6 lg:px-8 [&::-webkit-scrollbar]:hidden"
       >
-        <ul className="flex min-w-max items-center gap-7">
+        <ul className="flex justify-center min-w-max items-center gap-7">
           {items.map((item) => {
             const isActive = isNavigationItemActive(pathname, item);
 

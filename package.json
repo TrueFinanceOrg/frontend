@@ -10,13 +10,15 @@
     "build": "tsc -b && vite build",
     "preview": "vite preview",
     "lint": "eslint . --ignore-pattern dist",
-    "test": "vitest run"
+    "test": "vitest run",
+    "prettier": "prettier . --write"
   },
   "dependencies": {
     "@tanstack/react-query": "latest",
     "class-variance-authority": "latest",
     "clsx": "latest",
     "lucide-react": "latest",
+    "prettier": "^3.9.6",
     "react": "19.2.6",
     "react-dom": "19.2.6",
     "react-router-dom": "latest",
@@ -39,7 +41,7 @@
     "tailwindcss": "4.2.1",
     "typescript": "5.9.3",
     "typescript-eslint": "8.59.3",
-    "vite": "8.0.13",
+    "vite": "^8.2.1",
     "vitest": "latest"
   },
   "type": "module"

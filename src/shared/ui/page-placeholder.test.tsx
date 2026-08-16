@@ -6,10 +6,7 @@ import { PagePlaceholder } from "./page-placeholder";
 describe("PagePlaceholder", () => {
   it("renders the page title and description", () => {
     render(
-      <PagePlaceholder
-        title="Акции"
-        description="Раздел для анализа акций"
-      />,
+      <PagePlaceholder title="Акции" description="Раздел для анализа акций" />,
     );
 
     expect(screen.getByRole("heading", { name: "Акции" })).toBeInTheDocument();

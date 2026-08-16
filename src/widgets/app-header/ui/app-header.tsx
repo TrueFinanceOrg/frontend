@@ -10,10 +10,10 @@ export function AppHeader() {
 
   return (
     <header className="border-b bg-card">
-      <div className="mx-auto flex h-16 max-w-[1440px] items-center gap-5 px-4 sm:px-6 lg:h-[72px] lg:px-8">
+      <div className="mx-auto flex justify-between h-16 max-w-[1440px] items-center gap-5 px-4 sm:px-6 lg:h-[72px] lg:px-8">
         <Link
           to="/"
-          className="mr-1 flex shrink-0 items-center gap-2.5 rounded-md"
+          className="flex shrink-0 items-center gap-2.5 rounded-md"
           aria-label="TrueFinance — на главную"
         >
           <span className="flex size-9 items-center justify-center rounded-xl bg-primary text-primary-foreground shadow-[0_5px_16px_rgba(0,145,82,0.18)]">
@@ -24,11 +24,8 @@ export function AppHeader() {
           </span>
         </Link>
 
-        <nav
-          aria-label="Основная навигация"
-          className="min-w-0 flex-1 overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
-        >
-          <ul className="flex min-w-max items-center gap-1">
+        <nav aria-label="Основная навигация" className="w-fit">
+          <ul className="flex w-fit items-center gap-1">
             {primaryNavigation.map((item) => {
               const isActive =
                 item.matchPrefix === "/"

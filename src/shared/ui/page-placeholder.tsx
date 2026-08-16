@@ -25,7 +25,9 @@ export function PagePlaceholder({
           <div className="mx-auto mb-4 flex size-11 items-center justify-center rounded-xl bg-accent text-accent-foreground">
             <LayoutDashboard aria-hidden="true" className="size-5" />
           </div>
-          <p className="text-sm font-medium text-foreground">Пока здесь пусто</p>
+          <p className="text-sm font-medium text-foreground">
+            Пока здесь пусто
+          </p>
           <p className="mt-1.5 text-sm leading-6 text-muted-foreground">
             {description}
           </p>
